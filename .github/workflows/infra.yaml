@@ -14,10 +14,6 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          mkdir
-          ls
-          echo
-      - run: |
           terraform init
           terraform plan -var-file="dev.tfvars" 
           terraform apply -var-file="dev.tfvars" -auto-approve
